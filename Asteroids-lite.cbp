@@ -39,10 +39,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
-			<Add directory="E:/Projects/Asteroide-lite/Resources/SFML-2.5.1/include" />
+			<Add directory="E:/Projects/Asteroids-lite/Libs/SFML-2.5.1/include" />
 		</Compiler>
 		<Linker>
-			<Add directory="E:/Projects/Asteroide-lite/Resources/SFML-2.5.1/lib" />
+			<Add directory="E:/Projects/Asteroide-lite/Libs/SFML-2.5.1/lib" />
 		</Linker>
 		<Unit filename="main.cpp" />
 		<Extensions>
