@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-graphics-d" />
@@ -27,6 +28,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -44,7 +46,11 @@
 		<Linker>
 			<Add directory="E:/Projects/Asteroids-lite/Libs/SFML-2.5.1/lib" />
 		</Linker>
+		<Unit filename="include/SpaceShip.h" />
+		<Unit filename="include/Vector.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/SpaceShip.cpp" />
+		<Unit filename="src/Vector.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
