@@ -9,6 +9,7 @@ SpaceShip::SpaceShip()
   texture.loadFromFile("Assets/spaceship.png");
   sprite.setTexture(texture);
   sprite.setOrigin(sprite.getLocalBounds().width/2,sprite.getLocalBounds().height/2);
+  sprite.setPosition(50,50);
 }
 
 SpaceShip::~SpaceShip()
@@ -23,26 +24,21 @@ void SpaceShip::UpdateMove()
 
 
 }
-void SpaceShip::Update(float lastFrame)
+void SpaceShip::Update(double lastFrame)
 {
-    cout<< lastFrame;
     if(hasForward)
     {
-        speed += {SPEED_MODIFICATOR*lastFrame, 0.f};
+        speed += Vector::GetDirection(SPEED_MODIFICATOR*lastFrame, sprite.getRotation());
     }
+    speed -= speed * 1.f * lastFrame;
+    auto deplacement = speed*lastFrame;
+    sprite.move(deplacement.x, deplacement.y);
     if(hasLeft){
         sprite.rotate(-ROTATE_SPEED*lastFrame);
     }
     if(hasRight){
         sprite.rotate(ROTATE_SPEED*lastFrame);
     }
-    speed -= speed * (COEF_SLOWDOWN * lastFrame);
-
-    sprite.move(speed.x, speed.y*ROTATE_SPEED*lastFrame);
-}
-void SpaceShip::Rotation(float rotate)
-{
-    sprite.rotate(rotate);
 }
 void SpaceShip::Draw(sf::RenderWindow &wind) const
 {

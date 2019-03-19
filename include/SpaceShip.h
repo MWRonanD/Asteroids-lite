@@ -10,16 +10,14 @@ class SpaceShip
         SpaceShip();
         virtual ~SpaceShip();
         void UpdateMove();
-        void Update(float lastFrame);
+        void Update(double lastFrame);
         void Draw(sf::RenderWindow &wind)const;
-        void Rotation(float rotate);
 
     protected:
-        static constexpr float MAX_SPEED{10.f};
-        static constexpr float MIN_SPEED{0.f};
-        static constexpr float ROTATE_SPEED{100.f};
-        static constexpr float SPEED_MODIFICATOR{1.f};
-        static constexpr float COEF_SLOWDOWN{2.f};
+        static constexpr double SLOWDOWN{2};
+        static constexpr double ROTATE_SPEED{200};
+        static constexpr double SPEED_MODIFICATOR{700};
+
         sf::Sprite sprite{};
         sf::Texture texture{};
         //sf::Vector2f speed();

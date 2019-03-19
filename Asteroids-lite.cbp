@@ -46,6 +46,7 @@
 		<Linker>
 			<Add directory="E:/Projects/Asteroids-lite/Libs/SFML-2.5.1/lib" />
 		</Linker>
+		<Unit filename="include/M_PI.h" />
 		<Unit filename="include/SpaceShip.h" />
 		<Unit filename="include/Vector.h" />
 		<Unit filename="main.cpp" />

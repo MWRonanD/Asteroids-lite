@@ -1235,18 +1235,22 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1552609501 source:e:\projects\asteroids-lite\src\spaceship.cpp
+1553034588 source:e:\projects\asteroids-lite\src\spaceship.cpp
 	"../include/spaceship.h"
 	<iostream>
 	<SFML/Graphics.hpp>
 	"Vector.h"
 
-1552609224 e:\projects\asteroids-lite\include\spaceship.h
+1553034762 e:\projects\asteroids-lite\include\spaceship.h
 	<SFML/Graphics.hpp>
 	"Vector.h"
 
-1552607849 e:\projects\asteroids-lite\include\vector.h
+1553030977 e:\projects\asteroids-lite\include\vector.h
 
-1552607665 source:e:\projects\asteroids-lite\src\vector.cpp
+1553034731 source:e:\projects\asteroids-lite\src\vector.cpp
+	<iostream>
+	<cmath>
 	"Vector.h"
+
+1553025476 e:\projects\asteroids-lite\include\m_pi.h
 
