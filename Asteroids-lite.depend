@@ -412,9 +412,10 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1552608429 source:e:\projects\asteroids-lite\main.cpp
+1553120249 source:e:\projects\asteroids-lite\main.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
+	"Position.h"
 	"SpaceShip.h"
 
 1525812018 e:\projects\asteroids-lite\resources\sfml-2.5.1\include\sfml\graphics.hpp
@@ -1253,4 +1254,10 @@
 	"Vector.h"
 
 1553025476 e:\projects\asteroids-lite\include\m_pi.h
+
+1553119807 source:e:\projects\asteroids-lite\src\position.cpp
+	"Position.h"
+
+1553120398 e:\projects\asteroids-lite\include\position.h
+	"vector.h"
 

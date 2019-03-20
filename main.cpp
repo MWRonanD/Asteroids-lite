@@ -1,12 +1,15 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 using namespace std;
-
+#include "Position.h"
 #include "SpaceShip.h"
-
+constexpr int screenWidth{600};
+constexpr int screenHeight{800};
 int main()
 {
-    sf::RenderWindow wind{sf::VideoMode{800,600}, "Asteroids Lite" };
+    sf::RenderWindow wind{sf::VideoMode{screenHeight,screenWidth}, "Asteroids Lite" };
+    Position::InitScreenSize(screenWidth,screenHeight);
+
     SpaceShip ship{};
     sf::Clock clock{};
     while (wind.isOpen()){
