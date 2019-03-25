@@ -5,25 +5,21 @@ class Position
 {
     public:
         Position();
-        double GetX()
+        float GetX()
         {
             return x;
         }
-        double GetY()
+        float GetY()
         {
             return y;
         }
         void operator+=(Vector const &v);
 
-       void static InitScreenSize(int width, int height)
-       {
-            Position::screenWidth = width;
-           Position::screenHeight = height;
-       }
+       void static InitScreenSize(int width, int height);
 
     protected:
-        double x;
-        double y;
+        float x;
+        float y;
 
         static int screenWidth;
         static int screenHeight;

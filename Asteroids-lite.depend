@@ -412,7 +412,7 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1553120249 source:e:\projects\asteroids-lite\main.cpp
+1553537535 source:e:\projects\asteroids-lite\main.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	"Position.h"
@@ -1236,14 +1236,16 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1553034588 source:e:\projects\asteroids-lite\src\spaceship.cpp
+1553542091 source:e:\projects\asteroids-lite\src\spaceship.cpp
 	"../include/spaceship.h"
 	<iostream>
 	<SFML/Graphics.hpp>
 	"Vector.h"
+	"Position.h"
 
-1553034762 e:\projects\asteroids-lite\include\spaceship.h
+1553541694 e:\projects\asteroids-lite\include\spaceship.h
 	<SFML/Graphics.hpp>
+	"Position.h"
 	"Vector.h"
 
 1553030977 e:\projects\asteroids-lite\include\vector.h
@@ -1255,9 +1257,10 @@
 
 1553025476 e:\projects\asteroids-lite\include\m_pi.h
 
-1553119807 source:e:\projects\asteroids-lite\src\position.cpp
+1553541895 source:e:\projects\asteroids-lite\src\position.cpp
 	"Position.h"
+	<iostream>
 
-1553120398 e:\projects\asteroids-lite\include\position.h
+1553542011 e:\projects\asteroids-lite\include\position.h
 	"vector.h"
 

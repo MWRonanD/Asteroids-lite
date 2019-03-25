@@ -2,14 +2,16 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "Vector.h"
+#include "Position.h"
 using namespace std;
 
 SpaceShip::SpaceShip()
 {
+
   texture.loadFromFile("Assets/spaceship.png");
   sprite.setTexture(texture);
   sprite.setOrigin(sprite.getLocalBounds().width/2,sprite.getLocalBounds().height/2);
-  sprite.setPosition(50,50);
+  sprite.setPosition(pos.GetY(),pos.GetX());
 }
 
 SpaceShip::~SpaceShip()
@@ -31,8 +33,8 @@ void SpaceShip::Update(double lastFrame)
         speed += Vector::GetDirection(SPEED_MODIFICATOR*lastFrame, sprite.getRotation());
     }
     speed -= speed * 1.f * lastFrame;
-    auto deplacement = speed*lastFrame;
-    sprite.move(deplacement.x, deplacement.y);
+    pos += speed*lastFrame;
+    sprite.setPosition(pos.GetX(), pos.GetY());
     if(hasLeft){
         sprite.rotate(-ROTATE_SPEED*lastFrame);
     }

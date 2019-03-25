@@ -2,7 +2,9 @@
 #include <SFML/Graphics.hpp>
 using namespace std;
 #include "Position.h"
+//#include "SpaceShip.h"
 #include "SpaceShip.h"
+
 constexpr int screenWidth{600};
 constexpr int screenHeight{800};
 int main()

@@ -35,3 +35,4 @@ obj/*
 #Custom 
 bin
 obj
+.vscode

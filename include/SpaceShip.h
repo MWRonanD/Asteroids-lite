@@ -2,6 +2,7 @@
 #define SPACESHIP_H
 #include <SFML/Graphics.hpp>
 
+#include "Position.h"
 #include "Vector.h"
 
 class SpaceShip
@@ -22,6 +23,8 @@ class SpaceShip
         sf::Texture texture{};
         //sf::Vector2f speed();
         Vector speed{0.f};
+        Position pos{};
+
         bool hasForward{false};
         bool hasLeft{false};
         bool hasRight{false};
