@@ -3,14 +3,11 @@
 #include <SFML/Graphics.hpp>
 #include "Vector.h"
 #include "Position.h"
+#include "MovingItem.h"
 using namespace std;
 
-SpaceShip::SpaceShip()
+SpaceShip::SpaceShip() : MovingItem("Assets/spaceship.png")
 {
-
-  texture.loadFromFile("Assets/spaceship.png");
-  sprite.setTexture(texture);
-  sprite.setOrigin(sprite.getLocalBounds().width/2,sprite.getLocalBounds().height/2);
   sprite.setPosition(pos.GetY(),pos.GetX());
 }
 
@@ -26,24 +23,19 @@ void SpaceShip::UpdateMove()
 
 
 }
-void SpaceShip::Update(double lastFrame)
+void SpaceShip::Update(float lastFrame)
 {
     if(hasForward)
     {
         speed += Vector::GetDirection(SPEED_MODIFICATOR*lastFrame, sprite.getRotation());
     }
     speed -= speed * 1.f * lastFrame;
-    pos += speed*lastFrame;
-    sprite.setPosition(pos.GetX(), pos.GetY());
+    MovingItem::Update(lastFrame);
     if(hasLeft){
         sprite.rotate(-ROTATE_SPEED*lastFrame);
     }
     if(hasRight){
         sprite.rotate(ROTATE_SPEED*lastFrame);
     }
-}
-void SpaceShip::Draw(sf::RenderWindow &wind) const
-{
-    wind.draw(sprite);
 }
 

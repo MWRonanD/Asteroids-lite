@@ -2,8 +2,8 @@
 #include <SFML/Graphics.hpp>
 using namespace std;
 #include "Position.h"
-//#include "SpaceShip.h"
 #include "SpaceShip.h"
+#include "Asteroids.h"
 
 constexpr int screenWidth{600};
 constexpr int screenHeight{800};
@@ -13,6 +13,8 @@ int main()
     Position::InitScreenSize(screenWidth,screenHeight);
 
     SpaceShip ship{};
+    Asteroids asteroid{};
+
     sf::Clock clock{};
     while (wind.isOpen()){
         auto events = sf::Event{};
@@ -21,12 +23,13 @@ int main()
             if(events.type == sf::Event::Closed){
                 wind.close();
             }
-
         }
+        auto lastFrame = clock.restart().asSeconds();
         ship.UpdateMove();
-        ship.Update(clock.restart().asSeconds());
-
+        ship.Update(lastFrame);
+        asteroid.Update(lastFrame);
         wind.clear();
+        asteroid.Draw(wind);
         ship.Draw(wind);
 
         wind.display();

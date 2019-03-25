@@ -4,26 +4,20 @@
 
 #include "Position.h"
 #include "Vector.h"
+#include "MovingItem.h"
 
-class SpaceShip
+class SpaceShip : public MovingItem
 {
     public:
         SpaceShip();
         virtual ~SpaceShip();
+        void Update(float lastFrame);
         void UpdateMove();
-        void Update(double lastFrame);
-        void Draw(sf::RenderWindow &wind)const;
 
     protected:
         static constexpr double SLOWDOWN{2};
         static constexpr double ROTATE_SPEED{200};
         static constexpr double SPEED_MODIFICATOR{700};
-
-        sf::Sprite sprite{};
-        sf::Texture texture{};
-        //sf::Vector2f speed();
-        Vector speed{0.f};
-        Position pos{};
 
         bool hasForward{false};
         bool hasLeft{false};
