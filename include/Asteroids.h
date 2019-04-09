@@ -1,6 +1,7 @@
 #ifndef ASTEROIDS_H
 #define ASTEROIDS_H
-
+#include <random>
+#include <iostream>
 #include "MovingItem.h"
 
 

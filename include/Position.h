@@ -5,6 +5,8 @@ class Position
 {
     public:
         Position();
+        Position(float _x, float _y);
+        float GetDistance(Position const& other) const;
         float GetX()
         {
             return x;
@@ -16,13 +18,13 @@ class Position
         void operator+=(Vector const &v);
 
        void static InitScreenSize(int width, int height);
+        static int screenWidth;
+        static int screenHeight;
 
     protected:
         float x;
         float y;
 
-        static int screenWidth;
-        static int screenHeight;
     private:
 };
 #endif // POSITION_H

@@ -1,20 +1,32 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include <random>
 using namespace std;
 #include "Position.h"
 #include "SpaceShip.h"
 #include "Asteroids.h"
+#include "MovingItem.h"
+#include <array>
 
-constexpr int screenWidth{600};
-constexpr int screenHeight{800};
+constexpr int screenWidth{800};
+constexpr int screenHeight{600};
+
 int main()
 {
-    sf::RenderWindow wind{sf::VideoMode{screenHeight,screenWidth}, "Asteroids Lite" };
+    auto i = true;
+    sf::RenderWindow wind{sf::VideoMode{screenWidth,screenHeight}, "Asteroids Lite" };
     Position::InitScreenSize(screenWidth,screenHeight);
 
     SpaceShip ship{};
-    Asteroids asteroid{};
-
+    Asteroids asteroid1{};
+    Asteroids asteroid2{};
+    Asteroids asteroid3{};
+    Asteroids asteroid4{};
+    auto elements = array<MovingItem*, 5>{&asteroid1,
+                                                &asteroid2,
+                                                &asteroid3,
+                                                &asteroid4,
+                                                &ship};
     sf::Clock clock{};
     while (wind.isOpen()){
         auto events = sf::Event{};
@@ -25,13 +37,24 @@ int main()
             }
         }
         auto lastFrame = clock.restart().asSeconds();
-        ship.UpdateMove();
-        ship.Update(lastFrame);
-        asteroid.Update(lastFrame);
-        wind.clear();
-        asteroid.Draw(wind);
-        ship.Draw(wind);
+        for(auto* element : elements){
+            if(element != &ship)
+            {
+                element->Collision(ship);
+            }
+            else
+            {
+            }
+        }
 
+        for(MovingItem* element : elements){
+            element->Update(lastFrame);
+        }
+
+        wind.clear();
+        for(MovingItem* element : elements){
+            element->Draw(wind);
+        }
         wind.display();
     }
     return 0;

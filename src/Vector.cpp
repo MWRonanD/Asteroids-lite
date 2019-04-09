@@ -14,12 +14,11 @@
         y -= v.y;
     }
 
-    Vector Vector::operator *(double const &coef) const
+    Vector Vector::operator *(float const &coef) const
     {
         return {x * coef, y * coef};
     }
-    Vector Vector::GetDirection(double speed, double rotation)
+    Vector Vector::GetDirection(float speed, float rotation)
     {
-
-        return {speed * cos(rotation/180 * 3.1415926535897), speed * sin(rotation/180 * 3.1415926535897)};
+        return {(float)(speed * cos(rotation/180 * 3.14159265)), float(speed * sin(rotation/180 * 3.14159265))};
     }
