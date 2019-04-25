@@ -38,15 +38,13 @@ int main()
         }
         auto lastFrame = clock.restart().asSeconds();
         for(auto* element : elements){
-            if(element != &ship)
-            {
-                element->Collision(ship);
-            }
-            else
-            {
+            for(auto* element2 : elements){
+                if(element != &ship)
+                {
+                    element->Collision(ship);
+                }
             }
         }
-
         for(MovingItem* element : elements){
             element->Update(lastFrame);
         }

@@ -18,6 +18,8 @@ Asteroids::Asteroids() : MovingItem("Assets/asteroide.png")
     pos = {distribPosition(rdm),distribAngle(rdm) };
     speed = Vector::GetDirection(distribSpeed(rdm),distribSpeed(rdm));
     rotateSpeed = distribAngularSpeed(rdm);
+}
 
-    std::cout << distribAngularSpeed(rdm) << std::endl;
+void Asteroids::CollisionReaction(){
+
 }

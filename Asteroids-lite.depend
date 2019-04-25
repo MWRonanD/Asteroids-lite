@@ -412,7 +412,7 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1554753363 source:e:\projects\asteroids-lite\main.cpp
+1554848431 source:e:\projects\asteroids-lite\main.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	<random>
@@ -1240,19 +1240,21 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1554753456 source:e:\projects\asteroids-lite\src\spaceship.cpp
+1556230973 source:e:\projects\asteroids-lite\src\spaceship.cpp
 	"../include/spaceship.h"
 	<iostream>
 	<SFML/Graphics.hpp>
 	"Vector.h"
 	"Position.h"
 	"MovingItem.h"
+	"Explosion.h"
 
-1553813811 e:\projects\asteroids-lite\include\spaceship.h
+1556228413 e:\projects\asteroids-lite\include\spaceship.h
 	<SFML/Graphics.hpp>
 	"Position.h"
 	"Vector.h"
 	"MovingItem.h"
+	"Explosion.h"
 
 1554246306 e:\projects\asteroids-lite\include\vector.h
 
@@ -1263,7 +1265,7 @@
 
 1553025476 e:\projects\asteroids-lite\include\m_pi.h
 
-1554246598 source:e:\projects\asteroids-lite\src\position.cpp
+1554848843 source:e:\projects\asteroids-lite\src\position.cpp
 	"Position.h"
 	<iostream>
 	<cmath>
@@ -1272,20 +1274,20 @@
 1553814682 e:\projects\asteroids-lite\include\position.h
 	"vector.h"
 
-1554247833 e:\projects\asteroids-lite\include\movingitem.h
+1556228425 e:\projects\asteroids-lite\include\movingitem.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	"Vector.h"
 	"Position.h"
 
-1554753449 source:e:\projects\asteroids-lite\src\movingitem.cpp
+1556230793 source:e:\projects\asteroids-lite\src\movingitem.cpp
 	"MovingItem.h"
 	<iostream>
 	<SFML/Graphics.hpp>
 	"Vector.h"
 	"Position.h"
 
-1553813495 source:e:\projects\asteroids-lite\src\asteroids.cpp
+1554848779 source:e:\projects\asteroids-lite\src\asteroids.cpp
 	"Asteroids.h"
 	"MovingItem.h"
 	"Position.h"
@@ -1294,8 +1296,16 @@
 	<cstdlib>
 	<ctime>
 
-1553804227 e:\projects\asteroids-lite\include\asteroids.h
+1554848065 e:\projects\asteroids-lite\include\asteroids.h
 	<random>
 	<iostream>
 	"MovingItem.h"
+
+1556230182 source:e:\projects\asteroids-lite\src\explosion.cpp
+	"Explosion.h"
+	"MovingItem.h"
+
+1556230993 e:\projects\asteroids-lite\include\explosion.h
+	<MovingItem.h>
+	"Position.h"
 

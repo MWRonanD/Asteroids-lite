@@ -10,14 +10,16 @@ class MovingItem
 {
     public:
         MovingItem(std::string);
+        virtual ~MovingItem() { }
         virtual void Update(float lastFrame);
-        void Draw(sf::RenderWindow &wind)const;
+        virtual void Draw(sf::RenderWindow &wind);
         void Collision(MovingItem& other);
         Position GetPosition(){
             return pos;
         }
         float GetColiderRadius() const;
         void Hit();
+        virtual void CollisionReaction() = 0;
 
     protected:
         sf::Sprite sprite{};

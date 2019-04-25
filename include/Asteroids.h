@@ -9,6 +9,7 @@ class Asteroids : public MovingItem
 {
     public:
         Asteroids();
+        virtual void CollisionReaction();
 
     protected:
 

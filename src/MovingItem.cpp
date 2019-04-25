@@ -7,7 +7,11 @@
 
 MovingItem::MovingItem(std::string imgPath)
 {
-  texture.loadFromFile(imgPath.data());
+  if(!texture.loadFromFile(imgPath.data())){
+    std::cout<<"failed to load : " << imgPath << std::endl;
+  }else{
+      std::cout<<"success to load " << imgPath << std::endl;
+  }
   sprite.setTexture(texture);
   sprite.setOrigin(sprite.getLocalBounds().width/2,sprite.getLocalBounds().height/2);
   sprite.setPosition(pos.GetY(),pos.GetX());
@@ -19,7 +23,7 @@ void MovingItem::Update(float lastFrame)
     sprite.setPosition(pos.GetX(), pos.GetY());
     sprite.rotate(rotateSpeed*lastFrame);
 }
-void MovingItem::Draw(sf::RenderWindow &wind) const
+void MovingItem::Draw(sf::RenderWindow &wind)
 {
     auto drawing = std::array<Vector, 9>{
         Vector{-1,-1},Vector{0, -1},Vector{1,-1},
@@ -39,7 +43,7 @@ float MovingItem::GetColiderRadius() const
 
 void MovingItem::Hit()
 {
-    sprite.setColor(sf::Color::Red);
+    CollisionReaction();
 }
 
 void MovingItem::Collision(MovingItem& other)

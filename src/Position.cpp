@@ -55,7 +55,6 @@ float Position::GetDistance(Position const& other) const
     auto tmpX = (float)(std::min({abs(x - other.x), abs(x-other.x-screenWidth), abs(x-other.x+screenWidth) }));
     auto tmpY = (float)(std::min({abs(y - other.y), abs(y-other.y-screenHeight), abs(y-other.y+screenHeight) }));
     auto delta = Vector{tmpX , tmpY};
-    std::cout << sqrt(delta.x*delta.x+delta.y*delta.y) << std::endl;
     return sqrt(delta.x*delta.x+delta.y*delta.y);
 }
 
