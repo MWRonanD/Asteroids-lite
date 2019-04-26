@@ -21,6 +21,13 @@ class MovingItem
         void Hit();
         virtual void CollisionReaction() = 0;
 
+        static inline bool IsDestroy(MovingItem* item)
+        {
+            return item->isDestroy;
+        };
+
+        std::string name{};
+
     protected:
         sf::Sprite sprite{};
         sf::Texture texture{};
@@ -28,7 +35,7 @@ class MovingItem
         Vector speed{0.f};
         Position pos{};
         float rotateSpeed{};
-
+        bool isDestroy{false};
     private:
 };
 

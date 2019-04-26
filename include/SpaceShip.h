@@ -6,17 +6,16 @@
 #include "Vector.h"
 #include "MovingItem.h"
 #include "Explosion.h"
+#include "GameSpace.h"
 
 class SpaceShip : public MovingItem
 {
     public:
-        SpaceShip();
+        SpaceShip(GameSpace& gs);
         virtual ~SpaceShip();
         virtual void Update(float lastFrame) override;
         void UpdateMove();
         virtual void CollisionReaction();
-        virtual void Draw(sf::RenderWindow &wind) override;
-
 
     protected:
         static constexpr double SLOWDOWN{2};
@@ -24,11 +23,10 @@ class SpaceShip : public MovingItem
         static constexpr double SPEED_MODIFICATOR{700};
 
         Explosion explosion{};
-
+        GameSpace gameSpace;
         bool hasForward{false};
         bool hasLeft{false};
         bool hasRight{false};
-        bool isDestroy{false};
 
     private:
 };

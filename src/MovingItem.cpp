@@ -7,6 +7,7 @@
 
 MovingItem::MovingItem(std::string imgPath)
 {
+    name = imgPath;
   if(!texture.loadFromFile(imgPath.data())){
     std::cout<<"failed to load : " << imgPath << std::endl;
   }else{

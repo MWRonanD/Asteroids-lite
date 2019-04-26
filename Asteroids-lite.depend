@@ -412,7 +412,7 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1554848431 source:e:\projects\asteroids-lite\main.cpp
+1556315321 source:e:\projects\asteroids-lite\main.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	<random>
@@ -421,6 +421,7 @@
 	"Asteroids.h"
 	"MovingItem.h"
 	<array>
+	"GameSpace.h"
 
 1525812018 e:\projects\asteroids-lite\resources\sfml-2.5.1\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -1240,7 +1241,7 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1556230973 source:e:\projects\asteroids-lite\src\spaceship.cpp
+1556315394 source:e:\projects\asteroids-lite\src\spaceship.cpp
 	"../include/spaceship.h"
 	<iostream>
 	<SFML/Graphics.hpp>
@@ -1248,13 +1249,15 @@
 	"Position.h"
 	"MovingItem.h"
 	"Explosion.h"
+	"GameSpace.h"
 
-1556228413 e:\projects\asteroids-lite\include\spaceship.h
+1556315372 e:\projects\asteroids-lite\include\spaceship.h
 	<SFML/Graphics.hpp>
 	"Position.h"
 	"Vector.h"
 	"MovingItem.h"
 	"Explosion.h"
+	"GameSpace.h"
 
 1554246306 e:\projects\asteroids-lite\include\vector.h
 
@@ -1274,13 +1277,13 @@
 1553814682 e:\projects\asteroids-lite\include\position.h
 	"vector.h"
 
-1556228425 e:\projects\asteroids-lite\include\movingitem.h
+1556312254 e:\projects\asteroids-lite\include\movingitem.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	"Vector.h"
 	"Position.h"
 
-1556230793 source:e:\projects\asteroids-lite\src\movingitem.cpp
+1556312372 source:e:\projects\asteroids-lite\src\movingitem.cpp
 	"MovingItem.h"
 	<iostream>
 	<SFML/Graphics.hpp>
@@ -1301,11 +1304,20 @@
 	<iostream>
 	"MovingItem.h"
 
-1556230182 source:e:\projects\asteroids-lite\src\explosion.cpp
+1556311786 source:e:\projects\asteroids-lite\src\explosion.cpp
 	"Explosion.h"
 	"MovingItem.h"
 
-1556230993 e:\projects\asteroids-lite\include\explosion.h
+1556311728 e:\projects\asteroids-lite\include\explosion.h
 	<MovingItem.h>
 	"Position.h"
+
+1556308951 e:\projects\asteroids-lite\include\gamespace.h
+	<SFML/Graphics.hpp>
+	"MovingItem.h"
+	"vector"
+
+1556315899 source:e:\projects\asteroids-lite\src\gamespace.cpp
+	"GameSpace.h"
+	"MovingItem.h"
 

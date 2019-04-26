@@ -8,16 +8,15 @@ class Explosion : public MovingItem
 {
     public:
         Explosion();
-        virtual ~Explosion();
-        void Start(const Position p_position);
+        void Start(Position p_position);
         virtual void Update(float lastFrame) override;
-        virtual void Draw(sf::RenderWindow& wind) override;
         //DELETE ON REFACTOR
         virtual void CollisionReaction() override;
 
+        virtual ~Explosion();
     protected:
         bool hasStart{false};
         float startSince{0};
-        static constexpr float ANIMATION_DURATION{0.5f};
+        static constexpr float ANIMATION_DURATION{0.2f};
 };
 #endif // EXPLOSION_H

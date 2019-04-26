@@ -48,6 +48,7 @@
 		</Linker>
 		<Unit filename="include/Asteroids.h" />
 		<Unit filename="include/Explosion.h" />
+		<Unit filename="include/GameSpace.h" />
 		<Unit filename="include/MovingItem.h" />
 		<Unit filename="include/Position.h" />
 		<Unit filename="include/SpaceShip.h" />
@@ -55,6 +56,7 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Asteroids.cpp" />
 		<Unit filename="src/Explosion.cpp" />
+		<Unit filename="src/GameSpace.cpp" />
 		<Unit filename="src/MovingItem.cpp" />
 		<Unit filename="src/Position.cpp" />
 		<Unit filename="src/SpaceShip.cpp" />

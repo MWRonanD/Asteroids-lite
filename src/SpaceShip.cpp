@@ -5,16 +5,16 @@
 #include "Position.h"
 #include "MovingItem.h"
 #include "Explosion.h"
+#include "GameSpace.h"
 using namespace std;
 
-SpaceShip::SpaceShip() : MovingItem("Assets/spaceship.png")
+SpaceShip::SpaceShip(GameSpace& gs) : MovingItem("Assets/spaceship.png"), gameSpace{gs}
 {
-  sprite.setPosition(pos.GetY(),pos.GetX());
+    sprite.setPosition(pos.GetY(),pos.GetX());
 }
 
 SpaceShip::~SpaceShip()
 {
-    //dtor
 }
 void SpaceShip::UpdateMove()
 {
@@ -35,7 +35,7 @@ void SpaceShip::Update(float lastFrame)
         speed -= speed * 1.f * lastFrame;
 
         if(hasLeft){
-           rotateSpeed =  -ROTATE_SPEED;
+           rotateSpeed =-ROTATE_SPEED;
         }
         else if(hasRight){
             rotateSpeed = ROTATE_SPEED;
@@ -47,22 +47,12 @@ void SpaceShip::Update(float lastFrame)
         speed = {0,0};
     }
     MovingItem::Update(lastFrame);
-    explosion.Update(lastFrame);
-}
-
-void SpaceShip::Draw(sf::RenderWindow &wind){
-    if(!isDestroy){
-        MovingItem::Draw(wind);
-    }
-    else
-    {
-        explosion.Draw(wind);
-    }
 }
 
 void SpaceShip::CollisionReaction(){
     if(!isDestroy){
+        explosion.Start(pos);
+        gameSpace.AddElement(explosion);
         isDestroy = true;
-    explosion.Start(pos);
     }
 }
