@@ -29,6 +29,7 @@ void Explosion::Update(float lastFrame) {
     }else{
         isDestroy = true;
     }
+    MovingItem::Update(lastFrame);
 }
 //DELETE ON REFACTOR
 void Explosion::CollisionReaction() {
