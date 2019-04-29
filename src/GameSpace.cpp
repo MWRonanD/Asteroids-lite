@@ -7,7 +7,7 @@ GameSpace::GameSpace()
 }
 void GameSpace::AddElement(MovingItem& item){
     elements.push_back(&item);
-        std::cout<<item.name << " : "<<elements.size() <<std::endl;
+    std::cout<<item.name << " : "<<elements.size() <<std::endl;
 
 }
 

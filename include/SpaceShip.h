@@ -11,7 +11,7 @@
 class SpaceShip : public MovingItem
 {
     public:
-        SpaceShip(GameSpace& gs);
+        explicit SpaceShip(GameSpace& g_gameSpace);
         virtual ~SpaceShip();
         virtual void Update(float lastFrame) override;
         void UpdateMove();
@@ -22,8 +22,8 @@ class SpaceShip : public MovingItem
         static constexpr double ROTATE_SPEED{200};
         static constexpr double SPEED_MODIFICATOR{700};
 
+        GameSpace& gameSpace;
         Explosion explosion{};
-        GameSpace gameSpace;
         bool hasForward{false};
         bool hasLeft{false};
         bool hasRight{false};

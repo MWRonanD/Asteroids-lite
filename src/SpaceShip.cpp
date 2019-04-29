@@ -8,7 +8,7 @@
 #include "GameSpace.h"
 using namespace std;
 
-SpaceShip::SpaceShip(GameSpace& gs) : MovingItem("Assets/spaceship.png"), gameSpace{gs}
+SpaceShip::SpaceShip(GameSpace& g_gameSpace) : MovingItem{"Assets/spaceship.png"}, gameSpace{g_gameSpace}
 {
     sprite.setPosition(pos.GetY(),pos.GetX());
 }
@@ -26,8 +26,8 @@ void SpaceShip::UpdateMove()
 }
 void SpaceShip::Update(float lastFrame)
 {
-    if (!isDestroy){
         UpdateMove();
+    if (!isDestroy){
         if(hasForward)
         {
             speed += Vector::GetDirection(SPEED_MODIFICATOR*lastFrame, sprite.getRotation());
@@ -42,17 +42,16 @@ void SpaceShip::Update(float lastFrame)
         }else{
             rotateSpeed =0;
         }
+        MovingItem::Update(lastFrame);
     }
-    else{
-        speed = {0,0};
-    }
-    MovingItem::Update(lastFrame);
+
 }
 
 void SpaceShip::CollisionReaction(){
     if(!isDestroy){
-        explosion.Start(pos);
-        gameSpace.AddElement(explosion);
         isDestroy = true;
+        explosion.Start(GetPosition());
+        gameSpace.AddElement(explosion);
+
     }
 }
