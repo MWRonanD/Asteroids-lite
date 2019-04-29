@@ -13,7 +13,6 @@ constexpr int screenHeight{600};
 
 int main()
 {
-    auto i = true;
     sf::RenderWindow wind{sf::VideoMode{screenWidth,screenHeight}, "Asteroids Lite" };
     Position::InitScreenSize(screenWidth,screenHeight);
     auto gameSpace = GameSpace{};

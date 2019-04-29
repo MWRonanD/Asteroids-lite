@@ -20,9 +20,12 @@ MovingItem::MovingItem(std::string imgPath)
 
 void MovingItem::Update(float lastFrame)
 {
-    pos += speed*lastFrame;
+    auto deplacement = speed*lastFrame;
+    pos += deplacement;
     sprite.setPosition(pos.GetX(), pos.GetY());
     sprite.rotate(rotateSpeed*lastFrame);
+        std::cout<<"hi  MovingItem::Draw"<<std::endl;
+
 }
 void MovingItem::Draw(sf::RenderWindow &wind)
 {
@@ -42,10 +45,7 @@ float MovingItem::GetColiderRadius() const
     return sprite.getLocalBounds().height/2.f;
 }
 
-void MovingItem::Hit()
-{
-    CollisionReaction();
-}
+
 
 void MovingItem::Collision(MovingItem& other)
 {
@@ -53,8 +53,7 @@ void MovingItem::Collision(MovingItem& other)
 
     if(distance < GetColiderRadius() + other.GetColiderRadius())
     {
-        other.Hit();
-        Hit();
+        CollisionReaction();
     }
 }
 

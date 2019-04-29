@@ -8,7 +8,7 @@ class Explosion : public MovingItem
 {
     public:
         Explosion();
-        void Start(Position p_position);
+        void Start(Position p_position );
         virtual void Update(float lastFrame) override;
         //DELETE ON REFACTOR
         virtual void CollisionReaction() override;

@@ -10,6 +10,7 @@ class MovingItem
 {
     public:
         MovingItem(std::string);
+        MovingItem(MovingItem const& autre) = delete;
         virtual ~MovingItem() { }
         virtual void Update(float lastFrame);
         virtual void Draw(sf::RenderWindow &wind);
@@ -18,7 +19,6 @@ class MovingItem
             return pos;
         }
         float GetColiderRadius() const;
-        void Hit();
         virtual void CollisionReaction() = 0;
 
         static inline bool IsDestroy(MovingItem* item)
