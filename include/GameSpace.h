@@ -1,5 +1,6 @@
 #ifndef GAMESPACE_H
 #define GAMESPACE_H
+#include <memory>
 #include <SFML/Graphics.hpp>
 #include "MovingItem.h"
 #include "vector"
@@ -9,7 +10,7 @@ class GameSpace
     public:
         /** Default constructor */
         GameSpace();
-        void AddElement(MovingItem& item);
+        void AddElement(std::unique_ptr<MovingItem> item);
         void Update();
         void Collision();
         void Draw(sf::RenderWindow& wind) const;
@@ -21,7 +22,7 @@ class GameSpace
 
     protected:
         bool gameStarted{false};
-        std::vector<MovingItem*> elements{};
+        std::vector<std::unique_ptr<MovingItem>> elements{};
         sf::Clock clock{};
 
     private:

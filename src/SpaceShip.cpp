@@ -6,21 +6,26 @@
 #include "MovingItem.h"
 #include "Explosion.h"
 #include "GameSpace.h"
+#include "Missile.h"
 using namespace std;
 
 SpaceShip::SpaceShip(GameSpace& g_gameSpace) : MovingItem{"Assets/spaceship.png"}, gameSpace{g_gameSpace}
 {
+    type = TypeItem::SHIP;
     sprite.setPosition(pos.GetY(),pos.GetX());
 }
 
-SpaceShip::~SpaceShip()
-{
-}
+
 void SpaceShip::UpdateMove()
 {
     hasForward = sf::Keyboard::isKeyPressed(sf::Keyboard::Up);
     hasLeft = sf::Keyboard::isKeyPressed(sf::Keyboard::Left);
     hasRight = sf::Keyboard::isKeyPressed(sf::Keyboard::Right);
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && lastShoot.getElapsedTime().asSeconds() > COOLDOWN_SHOOT){
+            std::cout<< "hi";
+        gameSpace.AddElement(std::make_unique<Missile>(GetPosition(), sprite.getRotation()));
+        lastShoot.restart();
+    }
 
 
 }
@@ -47,11 +52,10 @@ void SpaceShip::Update(float lastFrame)
 
 }
 
-void SpaceShip::CollisionReaction(){
-    if(!isDestroy){
+void SpaceShip::CollisionReaction(TypeItem t_type){
+    if(t_type == TypeItem::ASTEROIDS){
         isDestroy = true;
-        explosion.Start(GetPosition());
-        gameSpace.AddElement(explosion);
+        gameSpace.AddElement(std::make_unique<Explosion>(GetPosition()));
 
     }
 }

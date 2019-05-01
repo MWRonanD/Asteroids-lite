@@ -4,7 +4,6 @@
 #include "Vector.h"
 #include "Position.h"
 
-
 MovingItem::MovingItem(std::string imgPath)
 {
     name = imgPath;
@@ -24,7 +23,6 @@ void MovingItem::Update(float lastFrame)
     pos += deplacement;
     sprite.setPosition(pos.GetX(), pos.GetY());
     sprite.rotate(rotateSpeed*lastFrame);
-        std::cout<<"hi  MovingItem::Draw"<<std::endl;
 
 }
 void MovingItem::Draw(sf::RenderWindow &wind)
@@ -53,7 +51,7 @@ void MovingItem::Collision(MovingItem& other)
 
     if(distance < GetColiderRadius() + other.GetColiderRadius())
     {
-        CollisionReaction();
+        CollisionReaction(other.type);
     }
 }
 

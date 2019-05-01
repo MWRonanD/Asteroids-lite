@@ -1,17 +1,19 @@
 #ifndef MOVINGITEM_H
 #define MOVINGITEM_H
 
+#include <memory>
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "Vector.h"
 #include "Position.h"
+
+enum class TypeItem{SHIP, ASTEROIDS, MISSILE, OTHER};
 
 class MovingItem
 {
     public:
         MovingItem(std::string);
         MovingItem(MovingItem const& autre) = delete;
-        virtual ~MovingItem() { }
         virtual void Update(float lastFrame);
         virtual void Draw(sf::RenderWindow &wind);
         void Collision(MovingItem& other);
@@ -19,9 +21,9 @@ class MovingItem
             return pos;
         }
         float GetColiderRadius() const;
-        virtual void CollisionReaction() = 0;
+        virtual void CollisionReaction(TypeItem typeItem) = 0;
 
-        static inline bool IsDestroy(MovingItem* item)
+        static inline bool IsDestroy(std::unique_ptr<MovingItem>& item)
         {
             return item->isDestroy;
         };
@@ -31,6 +33,8 @@ class MovingItem
     protected:
         sf::Sprite sprite{};
         sf::Texture texture{};
+
+        TypeItem type{TypeItem::OTHER};
 
         Vector speed{0.f};
         Position pos{};

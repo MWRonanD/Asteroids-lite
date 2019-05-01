@@ -7,15 +7,11 @@
 class Explosion : public MovingItem
 {
     public:
-        Explosion();
-        void Start(Position p_position );
+        Explosion(Position position);
         virtual void Update(float lastFrame) override;
         //DELETE ON REFACTOR
-        virtual void CollisionReaction() override;
-
-        virtual ~Explosion();
+        virtual void CollisionReaction(TypeItem t_type) override;
     protected:
-        bool hasStart{false};
         float startSince{0};
         static constexpr float ANIMATION_DURATION{0.2f};
 };

@@ -9,6 +9,7 @@
 
 Asteroids::Asteroids() : MovingItem("Assets/asteroide.png")
 {
+    type = TypeItem::ASTEROIDS;
     static std::random_device seed;
     static std::mt19937 rdm(seed());
     auto distribPosition = std::uniform_real_distribution<float>{-150,150};
@@ -20,6 +21,6 @@ Asteroids::Asteroids() : MovingItem("Assets/asteroide.png")
     rotateSpeed = distribAngularSpeed(rdm);
 }
 
-void Asteroids::CollisionReaction(){
+void Asteroids::CollisionReaction(TypeItem typeItem){
 
 }

@@ -9,7 +9,7 @@ class Asteroids : public MovingItem
 {
     public:
         Asteroids();
-        virtual void CollisionReaction();
+        virtual void CollisionReaction(TypeItem typeItem) override;
 
     protected:
 

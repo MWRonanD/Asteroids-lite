@@ -1,6 +1,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <random>
+#include <memory>
 using namespace std;
 #include "Position.h"
 #include "SpaceShip.h"
@@ -16,13 +17,6 @@ int main()
     sf::RenderWindow wind{sf::VideoMode{screenWidth,screenHeight}, "Asteroids Lite" };
     Position::InitScreenSize(screenWidth,screenHeight);
     auto gameSpace = GameSpace{};
-    SpaceShip ship{gameSpace};
-
-    Asteroids asteroid1{};
-    Asteroids asteroid2{};
-    Asteroids asteroid3{};
-    Asteroids asteroid4{};
-
     while (wind.isOpen()){
         auto events = sf::Event{};
         while(wind.pollEvent(events)){
@@ -31,16 +25,15 @@ int main()
             }
             if(events.type == sf::Event::KeyPressed && !gameSpace.GameState()){
                 gameSpace.StatGame();
-                gameSpace.AddElement(asteroid1);
-                gameSpace.AddElement(asteroid2);
-                gameSpace.AddElement(asteroid3);
-                gameSpace.AddElement(asteroid4);
-                gameSpace.AddElement(ship);
+                //Creation d'un spaceship avec pointeur dynamique
+                gameSpace.AddElement(std::make_unique<SpaceShip>(gameSpace));
+              //  gameSpace.AddElement(std::make_unique<Asteroids>());
             }
         }
-        gameSpace.Clean();
         gameSpace.Update();
         gameSpace.Collision();
+        gameSpace.Clean();
+
         wind.clear();
         gameSpace.Draw(wind);
         wind.display();

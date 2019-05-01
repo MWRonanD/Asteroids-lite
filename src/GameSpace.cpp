@@ -1,20 +1,20 @@
 #include "GameSpace.h"
 #include "MovingItem.h"
-
+#include <memory>
 GameSpace::GameSpace()
 {
     //ctor
 }
-void GameSpace::AddElement(MovingItem& item){
-    elements.push_back(&item);
-    std::cout<<item.name << " : "<<elements.size() <<std::endl;
+void GameSpace::AddElement(std::unique_ptr<MovingItem> item){
+    elements.push_back(std::move(item));
+    //std::cout<<item.name << " : "<<elements.size() <<std::endl;
 
 }
 
 void GameSpace::Update(){
     auto lastFrame = clock.restart().asSeconds();
-    for(MovingItem* element : elements){
-        element->Update(lastFrame);
+    for(auto i{0}; i<elements.size(); ++i){
+        elements[i]->Update(lastFrame);
     }
 
 }
@@ -29,7 +29,7 @@ void GameSpace::Collision(){
     }
 }
 void GameSpace::Draw(sf::RenderWindow& wind) const{
-    for(MovingItem* element : elements){
+    for(auto& element : elements){
         element->Draw(wind);
     }
 }
