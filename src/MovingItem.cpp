@@ -3,16 +3,13 @@
 #include <SFML/Graphics.hpp>
 #include "Vector.h"
 #include "Position.h"
+#include "ResourceManager.h"
 
 MovingItem::MovingItem(std::string imgPath)
 {
     name = imgPath;
-  if(!texture.loadFromFile(imgPath.data())){
-    std::cout<<"failed to load : " << imgPath << std::endl;
-  }else{
-      std::cout<<"success to load " << imgPath << std::endl;
-  }
-  sprite.setTexture(texture);
+
+  sprite.setTexture(ResourceManager::GetResource(imgPath));
   sprite.setOrigin(sprite.getLocalBounds().width/2,sprite.getLocalBounds().height/2);
   sprite.setPosition(pos.GetY(),pos.GetX());
 }

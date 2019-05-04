@@ -1286,12 +1286,13 @@
 	"Vector.h"
 	"Position.h"
 
-1556711456 source:e:\projects\asteroids-lite\src\movingitem.cpp
+1556981519 source:e:\projects\asteroids-lite\src\movingitem.cpp
 	"MovingItem.h"
 	<iostream>
 	<SFML/Graphics.hpp>
 	"Vector.h"
 	"Position.h"
+	"ResourceManager.h"
 
 1556733109 source:e:\projects\asteroids-lite\src\asteroids.cpp
 	"Asteroids.h"
@@ -1335,4 +1336,8 @@
 	<SFML/Graphics.hpp>
 	"Position.h"
 	<MovingItem.h>
+
+1556982542 e:\projects\asteroids-lite\include\resourcemanager.h
+	<unordered_map>
+	<SFML/Graphics.hpp>
 
