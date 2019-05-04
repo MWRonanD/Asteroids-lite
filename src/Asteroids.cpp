@@ -7,7 +7,7 @@
 #include <ctime>
 #include "Explosion.h"
 
-Asteroids::Asteroids(GameSpace& g_gameSpace) : MovingItem("Assets/asteroide.png"), gameSpace{g_gameSpace}
+Asteroids::Asteroids(GameSpace& g_gameSpace, Asteroids* asteroid) : MovingItem("Assets/asteroide.png"), gameSpace{g_gameSpace}
 {
     type = TypeItem::ASTEROIDS;
     static std::random_device seed;
@@ -16,17 +16,20 @@ Asteroids::Asteroids(GameSpace& g_gameSpace) : MovingItem("Assets/asteroide.png"
     auto distribSpeed = std::uniform_real_distribution<float>{80,120};
     auto distribAngle = std::uniform_real_distribution<float>{0, 360};
     auto distribAngularSpeed = std::uniform_real_distribution<float>{10,30};
-    pos = {distribPosition(rdm),distribAngle(rdm) };
     speed = Vector::GetDirection(distribSpeed(rdm),distribSpeed(rdm));
     rotateSpeed = distribAngularSpeed(rdm);
+    if (asteroid){
+        pos = asteroid->pos;
+    }else{
+        pos = {distribPosition(rdm),distribAngle(rdm)};
+    }
 }
 
 void Asteroids::CollisionReaction(TypeItem typeItem){
     if(typeItem == TypeItem::MISSILE){
         isDestroy = true;
-        gameSpace.AddElement(std::make_unique<Explosion>(GetPosition()));
-        //gameSpace.AddElement(std::make_unique<Asteroids>(GetPosition()));
-        //gameSpace.AddElement(std::make_unique<Asteroids>(GetPosition()));
-
+        gameSpace.AddElement(std::make_unique<Explosion>(pos));
+        gameSpace.AddElement(std::make_unique<Asteroids>(gameSpace,this));
+        gameSpace.AddElement(std::make_unique<Asteroids>(gameSpace,this));
     }
 }

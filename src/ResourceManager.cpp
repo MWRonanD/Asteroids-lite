@@ -13,6 +13,7 @@ sf::Texture const& ResourceManager::GetResource(std::string imgPath){
         {
             std::cerr<<"success to load " << imgPath << std::endl;
         }
-        return resources[imgPath];
+
     }
+    return resources[imgPath];
 }
