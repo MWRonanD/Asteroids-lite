@@ -20,6 +20,7 @@ Asteroids::Asteroids(GameSpace& g_gameSpace, Asteroids* asteroid) : MovingItem("
     rotateSpeed = distribAngularSpeed(rdm);
     if (asteroid){
         pos = asteroid->pos;
+        sprite.setScale(asteroid->sprite.getScale().x / 2, asteroid->sprite.getScale().y / 2 );
     }else{
         pos = {distribPosition(rdm),distribAngle(rdm)};
     }
@@ -29,7 +30,9 @@ void Asteroids::CollisionReaction(TypeItem typeItem){
     if(typeItem == TypeItem::MISSILE){
         isDestroy = true;
         gameSpace.AddElement(std::make_unique<Explosion>(pos));
+        if(sprite.getScale().x > MIN_SCALE){
         gameSpace.AddElement(std::make_unique<Asteroids>(gameSpace,this));
         gameSpace.AddElement(std::make_unique<Asteroids>(gameSpace,this));
+        }
     }
 }

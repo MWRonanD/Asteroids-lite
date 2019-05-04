@@ -37,7 +37,7 @@ void MovingItem::Draw(sf::RenderWindow &wind)
 }
 float MovingItem::GetColiderRadius() const
 {
-    return sprite.getLocalBounds().height/2.f;
+    return sprite.getGlobalBounds().height/2.4f;
 }
 
 

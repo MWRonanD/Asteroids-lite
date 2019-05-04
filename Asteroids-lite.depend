@@ -1286,7 +1286,7 @@
 	"Vector.h"
 	"Position.h"
 
-1556981519 source:e:\projects\asteroids-lite\src\movingitem.cpp
+1556986479 source:e:\projects\asteroids-lite\src\movingitem.cpp
 	"MovingItem.h"
 	<iostream>
 	<SFML/Graphics.hpp>
@@ -1294,7 +1294,7 @@
 	"Position.h"
 	"ResourceManager.h"
 
-1556986110 source:e:\projects\asteroids-lite\src\asteroids.cpp
+1556986580 source:e:\projects\asteroids-lite\src\asteroids.cpp
 	"Asteroids.h"
 	"MovingItem.h"
 	"Position.h"
@@ -1304,7 +1304,7 @@
 	<ctime>
 	"Explosion.h"
 
-1556983426 e:\projects\asteroids-lite\include\asteroids.h
+1556986652 e:\projects\asteroids-lite\include\asteroids.h
 	<random>
 	<iostream>
 	"MovingItem.h"

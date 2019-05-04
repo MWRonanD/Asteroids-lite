@@ -14,6 +14,7 @@ class Asteroids : public MovingItem
 
     protected:
         GameSpace& gameSpace;
+        static constexpr float MIN_SCALE{0.5f};
     private:
 };
 
