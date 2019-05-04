@@ -412,7 +412,7 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1556733192 source:e:\projects\asteroids-lite\main.cpp
+1556982915 source:e:\projects\asteroids-lite\main.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	<random>
@@ -1303,10 +1303,11 @@
 	<cstdlib>
 	<ctime>
 
-1556733112 e:\projects\asteroids-lite\include\asteroids.h
+1556982873 e:\projects\asteroids-lite\include\asteroids.h
 	<random>
 	<iostream>
 	"MovingItem.h"
+	"GameSpace.h"
 
 1556711481 source:e:\projects\asteroids-lite\src\explosion.cpp
 	"Explosion.h"
@@ -1340,4 +1341,8 @@
 1556982542 e:\projects\asteroids-lite\include\resourcemanager.h
 	<unordered_map>
 	<SFML/Graphics.hpp>
+
+1556982640 source:e:\projects\asteroids-lite\src\resourcemanager.cpp
+	"ResourceManager.h"
+	<iostream>
 

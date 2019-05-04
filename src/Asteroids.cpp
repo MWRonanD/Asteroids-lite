@@ -5,9 +5,9 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include "Explosion.h"
 
-
-Asteroids::Asteroids() : MovingItem("Assets/asteroide.png")
+Asteroids::Asteroids(GameSpace& g_gameSpace) : MovingItem("Assets/asteroide.png"), gameSpace{g_gameSpace}
 {
     type = TypeItem::ASTEROIDS;
     static std::random_device seed;
@@ -22,5 +22,11 @@ Asteroids::Asteroids() : MovingItem("Assets/asteroide.png")
 }
 
 void Asteroids::CollisionReaction(TypeItem typeItem){
+    if(typeItem == TypeItem::MISSILE){
+        isDestroy = true;
+        gameSpace.AddElement(std::make_unique<Explosion>(GetPosition()));
+        //gameSpace.AddElement(std::make_unique<Asteroids>(GetPosition()));
+        //gameSpace.AddElement(std::make_unique<Asteroids>(GetPosition()));
 
+    }
 }

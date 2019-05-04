@@ -27,7 +27,7 @@ int main()
                 gameSpace.StatGame();
                 //Creation d'un spaceship avec pointeur dynamique
                 gameSpace.AddElement(std::make_unique<SpaceShip>(gameSpace));
-              //  gameSpace.AddElement(std::make_unique<Asteroids>());
+                gameSpace.AddElement(std::make_unique<Asteroids>(gameSpace));
             }
         }
         gameSpace.Update();
