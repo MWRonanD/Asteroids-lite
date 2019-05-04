@@ -9,7 +9,7 @@
 #include "Missile.h"
 using namespace std;
 
-SpaceShip::SpaceShip(GameSpace& g_gameSpace) : MovingItem{"Assets/spaceship.png"}, gameSpace{g_gameSpace}
+SpaceShip::SpaceShip(GameSpace& g_gameSpace, GameManager& gaMa) : MovingItem{"Assets/spaceship.png"}, gameSpace{g_gameSpace}, gm{gaMa}
 {
     type = TypeItem::SHIP;
     sprite.setPosition(pos.GetY(),pos.GetX());
@@ -55,6 +55,7 @@ void SpaceShip::Update(float lastFrame)
 void SpaceShip::CollisionReaction(TypeItem t_type){
     if(t_type == TypeItem::ASTEROIDS){
         isDestroy = true;
+        gm.EndGame();
         gameSpace.AddElement(std::make_unique<Explosion>(GetPosition()));
 
     }

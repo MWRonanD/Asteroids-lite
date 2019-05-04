@@ -412,17 +412,12 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1556983787 source:e:\projects\asteroids-lite\main.cpp
-	<iostream>
+1557004409 source:e:\projects\asteroids-lite\main.cpp
 	<SFML/Graphics.hpp>
-	<random>
-	<memory>
 	"Position.h"
-	"SpaceShip.h"
-	"Asteroids.h"
 	"MovingItem.h"
-	<array>
 	"GameSpace.h"
+	"GameManager.h"
 
 1525812018 e:\projects\asteroids-lite\resources\sfml-2.5.1\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -1242,7 +1237,7 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1556711667 source:e:\projects\asteroids-lite\src\spaceship.cpp
+1557002447 source:e:\projects\asteroids-lite\src\spaceship.cpp
 	"../include/spaceship.h"
 	<iostream>
 	<SFML/Graphics.hpp>
@@ -1253,13 +1248,14 @@
 	"GameSpace.h"
 	"Missile.h"
 
-1556711576 e:\projects\asteroids-lite\include\spaceship.h
+1557002279 e:\projects\asteroids-lite\include\spaceship.h
 	<SFML/Graphics.hpp>
 	"Position.h"
 	"Vector.h"
 	"MovingItem.h"
 	"Explosion.h"
 	"GameSpace.h"
+	"GameManager.h"
 
 1554246306 e:\projects\asteroids-lite\include\vector.h
 
@@ -1294,7 +1290,7 @@
 	"Position.h"
 	"ResourceManager.h"
 
-1556986580 source:e:\projects\asteroids-lite\src\asteroids.cpp
+1556987200 source:e:\projects\asteroids-lite\src\asteroids.cpp
 	"Asteroids.h"
 	"MovingItem.h"
 	"Position.h"
@@ -1318,13 +1314,13 @@
 	<MovingItem.h>
 	"Position.h"
 
-1556983677 e:\projects\asteroids-lite\include\gamespace.h
+1556993130 e:\projects\asteroids-lite\include\gamespace.h
 	<memory>
 	<SFML/Graphics.hpp>
 	"MovingItem.h"
 	"vector"
 
-1556983909 source:e:\projects\asteroids-lite\src\gamespace.cpp
+1556993116 source:e:\projects\asteroids-lite\src\gamespace.cpp
 	"GameSpace.h"
 	"MovingItem.h"
 	<memory>
@@ -1346,4 +1342,19 @@
 1556986191 source:e:\projects\asteroids-lite\src\resourcemanager.cpp
 	"ResourceManager.h"
 	<iostream>
+
+1557004295 source:e:\projects\asteroids-lite\src\gamemanager.cpp
+	"GameManager.h"
+	"SpaceShip.h"
+	"Asteroids.h"
+	"font.h"
+	"ResourceManager.h"
+	<SFML/Graphics.hpp>
+	<memory>
+
+1557004403 e:\projects\asteroids-lite\include\gamemanager.h
+	"GameSpace.h"
+	<SFML/Graphics.hpp>
+
+1557003394 e:\projects\asteroids-lite\include\font.h
 

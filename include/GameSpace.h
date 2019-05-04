@@ -15,13 +15,13 @@ class GameSpace
         void Collision();
         void Draw(sf::RenderWindow& wind) const;
         void Clean();
+        void Clear();
 
-        void StatGame();
         void EndGale();
         bool GameState();
 
     protected:
-        bool gameStarted{false};
+        bool toClear{false};
         std::vector<std::unique_ptr<MovingItem>> elements{};
         std::vector<std::unique_ptr<MovingItem>> toAdd{};
         sf::Clock clock{};

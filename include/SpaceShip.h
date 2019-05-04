@@ -1,17 +1,17 @@
 #ifndef SPACESHIP_H
 #define SPACESHIP_H
 #include <SFML/Graphics.hpp>
-
 #include "Position.h"
 #include "Vector.h"
 #include "MovingItem.h"
 #include "Explosion.h"
 #include "GameSpace.h"
+#include "GameManager.h"
 
 class SpaceShip : public MovingItem
 {
     public:
-        explicit SpaceShip(GameSpace& g_gameSpace);
+        explicit SpaceShip(GameSpace& g_gameSpace, GameManager& gaMa);
         virtual void Update(float lastFrame) override;
         void UpdateMove();
         virtual void CollisionReaction(TypeItem t_type) override;
@@ -22,6 +22,7 @@ class SpaceShip : public MovingItem
         static constexpr double SPEED_MODIFICATOR{700};
         static constexpr float COOLDOWN_SHOOT{0.1};
 
+        GameManager& gm;
         GameSpace& gameSpace;
         sf::Clock lastShoot{};
 

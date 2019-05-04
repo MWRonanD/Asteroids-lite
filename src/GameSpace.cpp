@@ -42,18 +42,14 @@ void GameSpace::Clean(){
         elements.push_back(std::move(elem));
     }
     toAdd.clear();
+    if (toClear){
+        elements.clear();
+    }
 }
 
-
-void GameSpace::StatGame(){
-    gameStarted = true;
+void GameSpace::Clear(){
+    toClear = true;
+    toAdd.clear();
 }
 
-void GameSpace::EndGale(){
-    gameStarted = false;
-}
-
-bool GameSpace::GameState(){
-    return gameStarted;
-}
 
