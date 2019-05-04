@@ -9,7 +9,7 @@
 class Asteroids : public MovingItem
 {
     public:
-        Asteroids(GameSpace& g_gameSpace);
+        Asteroids(GameSpace& g_gameSpace, Asteroids* asteroid = nullptr);
         virtual void CollisionReaction(TypeItem typeItem) override;
 
     protected:

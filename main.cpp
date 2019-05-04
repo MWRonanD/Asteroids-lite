@@ -32,11 +32,13 @@ int main()
         }
         gameSpace.Update();
         gameSpace.Collision();
-        gameSpace.Clean();
 
         wind.clear();
         gameSpace.Draw(wind);
         wind.display();
+
+
+        gameSpace.Clean();
     }
     return 0;
 }

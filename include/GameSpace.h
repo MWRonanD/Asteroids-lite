@@ -23,6 +23,7 @@ class GameSpace
     protected:
         bool gameStarted{false};
         std::vector<std::unique_ptr<MovingItem>> elements{};
+        std::vector<std::unique_ptr<MovingItem>> toAdd{};
         sf::Clock clock{};
 
     private:

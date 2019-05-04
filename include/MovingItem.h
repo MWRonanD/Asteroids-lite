@@ -30,6 +30,7 @@ class MovingItem
 
         std::string name{};
 
+        Position pos{};
     protected:
         sf::Sprite sprite{};
         sf::Texture texture{};
@@ -37,7 +38,6 @@ class MovingItem
         TypeItem type{TypeItem::OTHER};
 
         Vector speed{0.f};
-        Position pos{};
         float rotateSpeed{};
         bool isDestroy{false};
     private:
