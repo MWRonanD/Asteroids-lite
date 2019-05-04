@@ -52,6 +52,7 @@
 		<Unit filename="include/Missile.h" />
 		<Unit filename="include/MovingItem.h" />
 		<Unit filename="include/Position.h" />
+		<Unit filename="include/ResourceManager.h" />
 		<Unit filename="include/SpaceShip.h" />
 		<Unit filename="include/Vector.h" />
 		<Unit filename="main.cpp" />
@@ -61,6 +62,7 @@
 		<Unit filename="src/Missile.cpp" />
 		<Unit filename="src/MovingItem.cpp" />
 		<Unit filename="src/Position.cpp" />
+		<Unit filename="src/ResourceManager.cpp" />
 		<Unit filename="src/SpaceShip.cpp" />
 		<Unit filename="src/Vector.cpp" />
 		<Extensions>

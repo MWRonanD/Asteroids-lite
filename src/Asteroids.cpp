@@ -31,8 +31,8 @@ void Asteroids::CollisionReaction(TypeItem typeItem){
         isDestroy = true;
         gameSpace.AddElement(std::make_unique<Explosion>(pos));
         if(sprite.getScale().x > MIN_SCALE){
-        gameSpace.AddElement(std::make_unique<Asteroids>(gameSpace,this));
-        gameSpace.AddElement(std::make_unique<Asteroids>(gameSpace,this));
+            gameSpace.AddElement(std::make_unique<Asteroids>(gameSpace,this));
+            gameSpace.AddElement(std::make_unique<Asteroids>(gameSpace,this));
         }
     }
 }
