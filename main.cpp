@@ -9,6 +9,7 @@ constexpr int screenHeight{600};
 
 int main()
 {
+    auto keyReleased{false};
     sf::RenderWindow wind{sf::VideoMode{screenWidth,screenHeight}, "Asteroids Lite" };
     Position::InitScreenSize(screenWidth,screenHeight);
     auto gameSpace = GameSpace{};
@@ -19,9 +20,10 @@ int main()
             if(events.type == sf::Event::Closed){
                 wind.close();
             }
-            if(events.type == sf::Event::KeyPressed && !gm.IsInGame()){
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Enter) && !gm.IsInGame()){
                 std::cout<<"Let's play !"<<std::endl;
                 gm.StartGame();
+                keyReleased = false;
             }
         }
         gameSpace.Update();

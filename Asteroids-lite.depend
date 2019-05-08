@@ -412,7 +412,7 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1557004409 source:e:\projects\asteroids-lite\main.cpp
+1557323021 source:e:\projects\asteroids-lite\main.cpp
 	<SFML/Graphics.hpp>
 	"Position.h"
 	"MovingItem.h"
@@ -1275,7 +1275,7 @@
 1556576004 e:\projects\asteroids-lite\include\position.h
 	"vector.h"
 
-1557311381 e:\projects\asteroids-lite\include\movingitem.h
+1557313492 e:\projects\asteroids-lite\include\movingitem.h
 	<memory>
 	<iostream>
 	<SFML/Graphics.hpp>
@@ -1290,7 +1290,7 @@
 	"Position.h"
 	"ResourceManager.h"
 
-1557311050 source:e:\projects\asteroids-lite\src\asteroids.cpp
+1557321962 source:e:\projects\asteroids-lite\src\asteroids.cpp
 	"Asteroids.h"
 	"MovingItem.h"
 	"Position.h"
@@ -1300,11 +1300,12 @@
 	<ctime>
 	"Explosion.h"
 
-1556986652 e:\projects\asteroids-lite\include\asteroids.h
+1557321950 e:\projects\asteroids-lite\include\asteroids.h
 	<random>
 	<iostream>
 	"MovingItem.h"
 	"GameSpace.h"
+	"GameManager.h"
 
 1557306906 source:e:\projects\asteroids-lite\src\explosion.cpp
 	"Explosion.h"
@@ -1316,13 +1317,13 @@
 	"Position.h"
 	<SFML/Audio.hpp>
 
-1557310574 e:\projects\asteroids-lite\include\gamespace.h
+1557313492 e:\projects\asteroids-lite\include\gamespace.h
 	<memory>
 	<SFML/Graphics.hpp>
 	"MovingItem.h"
 	"vector"
 
-1556993116 source:e:\projects\asteroids-lite\src\gamespace.cpp
+1557313492 source:e:\projects\asteroids-lite\src\gamespace.cpp
 	"GameSpace.h"
 	"MovingItem.h"
 	<memory>
@@ -1348,16 +1349,18 @@
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 
-1557310504 source:e:\projects\asteroids-lite\src\gamemanager.cpp
+1557324187 source:e:\projects\asteroids-lite\src\gamemanager.cpp
 	"GameManager.h"
 	"SpaceShip.h"
 	"Asteroids.h"
 	"font.h"
 	"ResourceManager.h"
+	<string>
 	<SFML/Graphics.hpp>
 	<memory>
+	<fstream>
 
-1557004403 e:\projects\asteroids-lite\include\gamemanager.h
+1557322196 e:\projects\asteroids-lite\include\gamemanager.h
 	"GameSpace.h"
 	<SFML/Graphics.hpp>
 
