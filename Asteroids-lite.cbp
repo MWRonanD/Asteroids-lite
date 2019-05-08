@@ -9,7 +9,7 @@
 			<Target title="Debug">
 				<Option output="bin/Debug/Asteroide-lite" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
-				<Option type="1" />
+				<Option type="0" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
@@ -25,7 +25,7 @@
 			<Target title="Release">
 				<Option output="bin/Release/Asteroide-lite" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
-				<Option type="1" />
+				<Option type="0" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
@@ -48,6 +48,9 @@
 		<Linker>
 			<Add directory="E:/Projects/Asteroids-lite/Libs/SFML-2.5.1/lib" />
 		</Linker>
+		<Unit filename="icon.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
 		<Unit filename="include/Asteroids.h" />
 		<Unit filename="include/Explosion.h" />
 		<Unit filename="include/GameManager.h" />

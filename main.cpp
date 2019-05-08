@@ -10,7 +10,11 @@ constexpr int screenHeight{600};
 int main()
 {
     auto keyReleased{false};
+    sf::Image icon;
+    if(!icon.loadFromFile("Assets/asteroide.png"))
+        EXIT_FAILURE;
     sf::RenderWindow wind{sf::VideoMode{screenWidth,screenHeight}, "Asteroids Lite" };
+    wind.setIcon(200,200,icon.getPixelsPtr());
     Position::InitScreenSize(screenWidth,screenHeight);
     auto gameSpace = GameSpace{};
     auto gm = GameManager{gameSpace};
