@@ -9,7 +9,7 @@ MovingItem::MovingItem(std::string imgPath)
 {
     name = imgPath;
 
-  sprite.setTexture(ResourceManager::GetResource(imgPath));
+  sprite.setTexture(ResourceManager<sf::Texture>::GetResource(imgPath));
   sprite.setOrigin(sprite.getLocalBounds().width/2,sprite.getLocalBounds().height/2);
   sprite.setPosition(pos.GetY(),pos.GetX());
 }

@@ -7,8 +7,6 @@ GameSpace::GameSpace()
 }
 void GameSpace::AddElement(std::unique_ptr<MovingItem> item){
     toAdd.push_back(std::move(item));
-    //std::cout<<item.name << " : "<<elements.size() <<std::endl;
-
 }
 
 void GameSpace::Update(){
@@ -43,8 +41,10 @@ void GameSpace::Clean(){
     }
     toAdd.clear();
     if (toClear){
+        toClear = false;
         elements.clear();
     }
+
 }
 
 void GameSpace::Clear(){

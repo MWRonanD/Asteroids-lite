@@ -16,6 +16,7 @@ class GameSpace
         void Draw(sf::RenderWindow& wind) const;
         void Clean();
         void Clear();
+        inline bool IsEmpty()const {return elements.empty() && toAdd.empty();};
 
         void EndGale();
         bool GameState();

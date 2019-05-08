@@ -10,7 +10,7 @@
 GameManager::GameManager(GameSpace& gs) : gameSpace{gs}
 {
     font.loadFromMemory(Air_Americana_ttf,Air_Americana_ttf_size);
-    spriteHome.setTexture(ResourceManager::GetResource("Assets/accueil.png"));
+    spriteHome.setTexture(ResourceManager<sf::Texture>::GetResource("Assets/accueil.png"));
 }
 
 void GameManager::StartGame(){
@@ -33,7 +33,7 @@ void GameManager::EndGame(){
 }
 
 void GameManager::DrawHome(sf::RenderWindow& wind) const{
-    if(!IsInGame()){
+    if(!IsInGame() && gameSpace.IsEmpty()){
         wind.draw(spriteHome);
     }
 }

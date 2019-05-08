@@ -29,13 +29,13 @@ class MovingItem
         };
 
         std::string name{};
+        TypeItem type{TypeItem::OTHER};
 
         Position pos{};
     protected:
         sf::Sprite sprite{};
         sf::Texture texture{};
 
-        TypeItem type{TypeItem::OTHER};
 
         Vector speed{0.f};
         float rotateSpeed{};

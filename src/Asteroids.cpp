@@ -29,10 +29,10 @@ Asteroids::Asteroids(GameSpace& g_gameSpace, Asteroids* asteroid) : MovingItem("
 void Asteroids::CollisionReaction(TypeItem typeItem){
     if(typeItem == TypeItem::MISSILE){
         isDestroy = true;
-        gameSpace.AddElement(std::make_unique<Explosion>(pos));
         if(sprite.getScale().x > MIN_SCALE){
             gameSpace.AddElement(std::make_unique<Asteroids>(gameSpace,this));
             gameSpace.AddElement(std::make_unique<Asteroids>(gameSpace,this));
         }
+        gameSpace.AddElement(std::make_unique<Explosion>(pos));
     }
 }

@@ -1275,14 +1275,14 @@
 1556576004 e:\projects\asteroids-lite\include\position.h
 	"vector.h"
 
-1556983349 e:\projects\asteroids-lite\include\movingitem.h
+1557311381 e:\projects\asteroids-lite\include\movingitem.h
 	<memory>
 	<iostream>
 	<SFML/Graphics.hpp>
 	"Vector.h"
 	"Position.h"
 
-1556986479 source:e:\projects\asteroids-lite\src\movingitem.cpp
+1557306205 source:e:\projects\asteroids-lite\src\movingitem.cpp
 	"MovingItem.h"
 	<iostream>
 	<SFML/Graphics.hpp>
@@ -1290,7 +1290,7 @@
 	"Position.h"
 	"ResourceManager.h"
 
-1556987200 source:e:\projects\asteroids-lite\src\asteroids.cpp
+1557311050 source:e:\projects\asteroids-lite\src\asteroids.cpp
 	"Asteroids.h"
 	"MovingItem.h"
 	"Position.h"
@@ -1306,15 +1306,17 @@
 	"MovingItem.h"
 	"GameSpace.h"
 
-1556711481 source:e:\projects\asteroids-lite\src\explosion.cpp
+1557306906 source:e:\projects\asteroids-lite\src\explosion.cpp
 	"Explosion.h"
 	"MovingItem.h"
+	"ResourceManager.h"
 
-1556711470 e:\projects\asteroids-lite\include\explosion.h
+1557306711 e:\projects\asteroids-lite\include\explosion.h
 	<MovingItem.h>
 	"Position.h"
+	<SFML/Audio.hpp>
 
-1556993130 e:\projects\asteroids-lite\include\gamespace.h
+1557310574 e:\projects\asteroids-lite\include\gamespace.h
 	<memory>
 	<SFML/Graphics.hpp>
 	"MovingItem.h"
@@ -1325,25 +1327,28 @@
 	"MovingItem.h"
 	<memory>
 
-1556711722 source:e:\projects\asteroids-lite\src\missile.cpp
+1557306591 source:e:\projects\asteroids-lite\src\missile.cpp
 	"Missile.h"
 	"vector.h"
 	"MovingItem.h"
+	"ResourceManager.h"
 
-1556711476 e:\projects\asteroids-lite\include\missile.h
+1557306466 e:\projects\asteroids-lite\include\missile.h
 	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
 	"Position.h"
 	<MovingItem.h>
 
-1556982542 e:\projects\asteroids-lite\include\resourcemanager.h
+1557306163 e:\projects\asteroids-lite\include\resourcemanager.h
 	<unordered_map>
-	<SFML/Graphics.hpp>
-
-1556986191 source:e:\projects\asteroids-lite\src\resourcemanager.cpp
-	"ResourceManager.h"
 	<iostream>
 
-1557004295 source:e:\projects\asteroids-lite\src\gamemanager.cpp
+1557306162 source:e:\projects\asteroids-lite\src\resourcemanager.cpp
+	"ResourceManager.h"
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+
+1557310504 source:e:\projects\asteroids-lite\src\gamemanager.cpp
 	"GameManager.h"
 	"SpaceShip.h"
 	"Asteroids.h"
@@ -1357,4 +1362,108 @@
 	<SFML/Graphics.hpp>
 
 1557003394 e:\projects\asteroids-lite\include\font.h
+
+1525815618 e:\projects\asteroids-lite\libs\sfml-2.5.1\include\sfml\audio.hpp
+	<SFML/System.hpp>
+	<SFML/Audio/InputSoundFile.hpp>
+	<SFML/Audio/Listener.hpp>
+	<SFML/Audio/Music.hpp>
+	<SFML/Audio/OutputSoundFile.hpp>
+	<SFML/Audio/Sound.hpp>
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/SoundBufferRecorder.hpp>
+	<SFML/Audio/SoundFileFactory.hpp>
+	<SFML/Audio/SoundFileReader.hpp>
+	<SFML/Audio/SoundFileWriter.hpp>
+	<SFML/Audio/SoundRecorder.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/Audio/SoundStream.hpp>
+
+1525815618 e:\projects\asteroids-lite\libs\sfml-2.5.1\include\sfml\audio\inputsoundfile.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<algorithm>
+
+1525815618 e:\projects\asteroids-lite\libs\sfml-2.5.1\include\sfml\audio\export.hpp
+	<SFML/Config.hpp>
+
+1525815618 e:\projects\asteroids-lite\libs\sfml-2.5.1\include\sfml\audio\listener.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/Vector3.hpp>
+
+1525815618 e:\projects\asteroids-lite\libs\sfml-2.5.1\include\sfml\audio\music.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundStream.hpp>
+	<SFML/Audio/InputSoundFile.hpp>
+	<SFML/System/Mutex.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+
+1525815618 e:\projects\asteroids-lite\libs\sfml-2.5.1\include\sfml\audio\soundstream.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Time.hpp>
+	<SFML/System/Mutex.hpp>
+	<cstdlib>
+
+1525815618 e:\projects\asteroids-lite\libs\sfml-2.5.1\include\sfml\audio\soundsource.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Vector3.hpp>
+
+1525815618 e:\projects\asteroids-lite\libs\sfml-2.5.1\include\sfml\audio\alresource.hpp
+	<SFML/Audio/Export.hpp>
+
+1525815618 e:\projects\asteroids-lite\libs\sfml-2.5.1\include\sfml\audio\outputsoundfile.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/System/NonCopyable.hpp>
+	<string>
+
+1525815618 e:\projects\asteroids-lite\libs\sfml-2.5.1\include\sfml\audio\sound.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundSource.hpp>
+	<SFML/System/Time.hpp>
+	<cstdlib>
+
+1525815618 e:\projects\asteroids-lite\libs\sfml-2.5.1\include\sfml\audio\soundbuffer.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Time.hpp>
+	<string>
+	<vector>
+	<set>
+
+1525815618 e:\projects\asteroids-lite\libs\sfml-2.5.1\include\sfml\audio\soundbufferrecorder.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/SoundBuffer.hpp>
+	<SFML/Audio/SoundRecorder.hpp>
+	<vector>
+
+1525815618 e:\projects\asteroids-lite\libs\sfml-2.5.1\include\sfml\audio\soundrecorder.hpp
+	<SFML/Audio/Export.hpp>
+	<SFML/Audio/AlResource.hpp>
+	<SFML/System/Thread.hpp>
+	<SFML/System/Time.hpp>
+	<vector>
+	<string>
+
+1525815618 e:\projects\asteroids-lite\libs\sfml-2.5.1\include\sfml\audio\soundfilefactory.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+	<vector>
+	<SFML/Audio/SoundFileFactory.inl>
+
+1525815618 e:\projects\asteroids-lite\libs\sfml-2.5.1\include\sfml\audio\soundfilefactory.inl
+
+1525815618 e:\projects\asteroids-lite\libs\sfml-2.5.1\include\sfml\audio\soundfilereader.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
+
+1525815618 e:\projects\asteroids-lite\libs\sfml-2.5.1\include\sfml\audio\soundfilewriter.hpp
+	<SFML/Audio/Export.hpp>
+	<string>
 

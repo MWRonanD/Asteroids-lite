@@ -1,6 +1,7 @@
 #include "Missile.h"
 #include "vector.h"
-#include"MovingItem.h"
+#include "MovingItem.h"
+#include "ResourceManager.h"
 
 Missile::Missile(Position position, float rotation) : MovingItem{"Assets/missile.png"}
 {
@@ -8,6 +9,8 @@ Missile::Missile(Position position, float rotation) : MovingItem{"Assets/missile
     pos = Position{position.GetX(), position.GetY()};
     sprite.setRotation(rotation);
     speed = Vector::GetDirection(SPEED,rotation);
+    sound.setBuffer(ResourceManager<sf::SoundBuffer>::GetResource("Assets/laser.wav"));
+    sound.play();
 }
 
 void Missile::CollisionReaction(TypeItem t_type) {
