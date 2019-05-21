@@ -1248,7 +1248,7 @@
 	"GameSpace.h"
 	"Missile.h"
 
-1558462749 e:\projects\asteroids-lite\include\spaceship.h
+1558462860 e:\projects\asteroids-lite\include\spaceship.h
 	<SFML/Graphics.hpp>
 	"Position.h"
 	"Vector.h"
@@ -1349,7 +1349,7 @@
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 
-1558462680 source:e:\projects\asteroids-lite\src\gamemanager.cpp
+1558462845 source:e:\projects\asteroids-lite\src\gamemanager.cpp
 	"GameManager.h"
 	"SpaceShip.h"
 	"Asteroids.h"
