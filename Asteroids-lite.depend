@@ -412,7 +412,7 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1557323021 source:e:\projects\asteroids-lite\main.cpp
+1557331990 source:e:\projects\asteroids-lite\main.cpp
 	<SFML/Graphics.hpp>
 	"Position.h"
 	"MovingItem.h"
@@ -1248,7 +1248,7 @@
 	"GameSpace.h"
 	"Missile.h"
 
-1557002279 e:\projects\asteroids-lite\include\spaceship.h
+1558457492 e:\projects\asteroids-lite\include\spaceship.h
 	<SFML/Graphics.hpp>
 	"Position.h"
 	"Vector.h"

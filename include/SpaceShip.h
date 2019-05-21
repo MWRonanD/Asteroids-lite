@@ -20,7 +20,7 @@ class SpaceShip : public MovingItem
         static constexpr double SLOWDOWN{2};
         static constexpr double ROTATE_SPEED{200};
         static constexpr double SPEED_MODIFICATOR{700};
-        static constexpr float COOLDOWN_SHOOT{0.1};
+        static constexpr float COOLDOWN_SHOOT{0.3};
 
         GameManager& gm;
         GameSpace& gameSpace;
