@@ -13,10 +13,13 @@ class Missile : public MovingItem
         /** Default constructor */
         Missile(Position position, float rotation);
         virtual void CollisionReaction(TypeItem t_type) override;
+        virtual void Update(float lastFrame) override;
 
     protected:
         sf::Sound sound{};
+        sf::Clock timeSinceCreate{};
         static constexpr float SPEED{2000.f};
+        static constexpr float LIFETIME{1.5f};
     private:
 };
 

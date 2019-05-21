@@ -18,3 +18,13 @@ void Missile::CollisionReaction(TypeItem t_type) {
         isDestroy = true;
     }
 }
+
+void Missile::Update(float lastFrame)
+{
+    if (timeSinceCreate.getElapsedTime().asSeconds() > LIFETIME)
+    {
+       isDestroy = true;
+    }
+    
+    MovingItem::Update(lastFrame);
+}
