@@ -18,14 +18,31 @@ class GameSpace
         void Clear();
         inline bool IsEmpty()const {return elements.empty() && toAdd.empty();};
 
-        void EndGale();
-        bool GameState();
+        inline int GetNbAsteroids(){
+            auto nbAsteroids{0};
+            for(auto& item : elements){
+                if (item->type == TypeItem::ASTEROIDS)
+                {
+                   nbAsteroids++;
+                }
+            }
+            for(auto& item : toAdd){
+                if (item->type == TypeItem::ASTEROIDS)
+                {
+                   nbAsteroids++;
+                }
+            }
+            return nbAsteroids;
+        };
 
     protected:
+
         bool toClear{false};
+
         std::vector<std::unique_ptr<MovingItem>> elements{};
         std::vector<std::unique_ptr<MovingItem>> toAdd{};
         sf::Clock clock{};
+
 
     private:
 };

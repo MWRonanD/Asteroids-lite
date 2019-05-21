@@ -47,10 +47,11 @@ void GameManager::StartGame(){
     //Spaceship
     gameSpace.AddElement(std::make_unique<SpaceShip>(gameSpace, *this));
     //Asteroids
-    gameSpace.AddElement(std::make_unique<Asteroids>(gameSpace, *this));
-    gameSpace.AddElement(std::make_unique<Asteroids>(gameSpace, *this));
-    gameSpace.AddElement(std::make_unique<Asteroids>(gameSpace, *this));
-    gameSpace.AddElement(std::make_unique<Asteroids>(gameSpace, *this));
+    // gameSpace.AddElement(std::make_unique<Asteroids>(gameSpace, *this));
+    // gameSpace.AddElement(std::make_unique<Asteroids>(gameSpace, *this));
+    // gameSpace.AddElement(std::make_unique<Asteroids>(gameSpace, *this));
+    // gameSpace.AddElement(std::make_unique<Asteroids>(gameSpace, *this));
+
     std::cout<<"Started"<<std::endl;
 
 }
@@ -95,3 +96,13 @@ void GameManager::UpdateBestScore()
     displayBestScore.setString("Best score : "s + std::to_string(bestScore));
 }
 
+void GameManager::CheckForAsteroids()
+{
+    if (NB_ASTEROIDS > gameSpace.GetNbAsteroids() && inGame)
+    {
+        for (auto i{0}; i < NB_ASTEROIDS ; i++)
+        {
+             gameSpace.AddElement(std::make_unique<Asteroids>(gameSpace, *this));
+        }
+    }
+}

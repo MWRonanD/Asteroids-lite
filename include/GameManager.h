@@ -14,7 +14,8 @@ class GameManager
         void AddScore(int s);
         inline bool IsInGame() const {return inGame;};
         void DrawHome(sf::RenderWindow& wind) const;
-
+        void CheckForAsteroids();
+        
     protected:
         void UpdateScore();
         void UpdateBestScore();
@@ -24,9 +25,13 @@ class GameManager
         sf::Sprite spriteHome{};
         sf::Text displayScore{};
         sf::Text displayBestScore{};
+
         bool inGame{false};
         int score{0};
         int bestScore{0};
+
+        static constexpr int NB_ASTEROIDS{4};
+
     private:
 };
 

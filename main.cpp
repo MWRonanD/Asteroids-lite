@@ -30,9 +30,10 @@ int main()
                 keyReleased = false;
             }
         }
+        gm.CheckForAsteroids();
         gameSpace.Update();
         gameSpace.Collision();
-
+        
         wind.clear();
         gameSpace.Draw(wind);
         gm.DrawHome(wind);

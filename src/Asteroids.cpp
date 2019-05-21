@@ -20,7 +20,7 @@ Asteroids::Asteroids(GameSpace& g_gameSpace, GameManager& gaMa, Asteroids* aster
     rotateSpeed = distribAngularSpeed(rdm);
     if (asteroid){
         pos = asteroid->pos;
-        sprite.setScale(asteroid->sprite.getScale().x / 2, asteroid->sprite.getScale().y / 2 );
+        sprite.setScale(asteroid->sprite.getScale().x / SCALE_DIVISOR, asteroid->sprite.getScale().y / SCALE_DIVISOR );
     }else{
         pos = {distribPosition(rdm),distribAngle(rdm)};
     }
