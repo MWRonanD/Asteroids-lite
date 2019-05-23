@@ -11,7 +11,7 @@ Asteroids::Asteroids(GameSpace &g_gameSpace, GameManager &gaMa, Asteroids *aster
 {
     type = TypeItem::ASTEROIDS;
     speed = Vector::GetDirection(gm.GetRand(80.f, 120.f), gm.GetRand(0.f, 360.f));
-    rotateSpeed = gm.GetRand(10.f, 30.f);
+    rotateSpeed = gm.GetRand(10.f, 50.f);
     if (asteroid)
     {
         pos = asteroid->pos;
@@ -19,7 +19,7 @@ Asteroids::Asteroids(GameSpace &g_gameSpace, GameManager &gaMa, Asteroids *aster
     }
     else
     {
-        pos = {gm.GetRand(-150.f, 150.f), gm.GetRand(0.f, 360.f)};
+        pos = {gm.GetRand(-250.f, 250.f), gm.GetRand(0.f, 360.f)};
     }
 }
 
