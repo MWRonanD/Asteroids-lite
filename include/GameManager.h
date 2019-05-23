@@ -15,7 +15,10 @@ class GameManager
         inline bool IsInGame() const {return inGame;};
         void DrawHome(sf::RenderWindow& wind) const;
         void CheckForAsteroids();
-        
+        inline float GetRand(float M,float N)
+        {
+            return float(M + (rand() / ( RAND_MAX / (N-M) ) )) ;  
+        }
     protected:
         void UpdateScore();
         void UpdateBestScore();

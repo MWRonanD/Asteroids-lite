@@ -22,7 +22,6 @@ void SpaceShip::UpdateMove()
     hasLeft = sf::Keyboard::isKeyPressed(sf::Keyboard::Left);
     hasRight = sf::Keyboard::isKeyPressed(sf::Keyboard::Right);
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && lastShoot.getElapsedTime().asSeconds() > COOLDOWN_SHOOT){
-            std::cout<< "hi";
         gameSpace.AddElement(std::make_unique<Missile>(GetPosition(), sprite.getRotation()));
         lastShoot.restart();
     }

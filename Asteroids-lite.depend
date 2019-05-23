@@ -1237,7 +1237,7 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1557002447 source:e:\projects\asteroids-lite\src\spaceship.cpp
+1558636786 source:e:\projects\asteroids-lite\src\spaceship.cpp
 	"../include/spaceship.h"
 	<iostream>
 	<SFML/Graphics.hpp>
@@ -1290,7 +1290,7 @@
 	"Position.h"
 	"ResourceManager.h"
 
-1558459001 source:e:\projects\asteroids-lite\src\asteroids.cpp
+1558636489 source:e:\projects\asteroids-lite\src\asteroids.cpp
 	"Asteroids.h"
 	"MovingItem.h"
 	"Position.h"
@@ -1328,7 +1328,7 @@
 	"MovingItem.h"
 	<memory>
 
-1558457946 source:e:\projects\asteroids-lite\src\missile.cpp
+1558636124 source:e:\projects\asteroids-lite\src\missile.cpp
 	"Missile.h"
 	"vector.h"
 	"MovingItem.h"
@@ -1360,7 +1360,7 @@
 	<memory>
 	<fstream>
 
-1558462458 e:\projects\asteroids-lite\include\gamemanager.h
+1558637274 e:\projects\asteroids-lite\include\gamemanager.h
 	"GameSpace.h"
 	<SFML/Graphics.hpp>
 
