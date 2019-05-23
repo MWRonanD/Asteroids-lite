@@ -14,7 +14,7 @@ Missile::Missile(Position position, float rotation) : MovingItem{"Assets/missile
 }
 
 void Missile::CollisionReaction(TypeItem t_type) {
-    if(t_type != TypeItem::SHIP){
+    if(t_type != TypeItem::SHIP && t_type != TypeItem::MISSILE){
         isDestroy = true;
     }
 }
@@ -25,6 +25,6 @@ void Missile::Update(float lastFrame)
     {
        isDestroy = true;
     }
-    
+    timeSinceCreate.restart();
     MovingItem::Update(lastFrame);
 }
