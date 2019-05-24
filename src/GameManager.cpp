@@ -11,35 +11,37 @@
 
 using namespace std::string_literals;
 
-GameManager::GameManager(GameSpace& gs) : gameSpace{gs}
+GameManager::GameManager(GameSpace &gs) : gameSpace{gs}
 {
     auto file = std::ifstream{".save"};
-    if(file.is_open())
+    if (file.is_open())
     {
         file >> bestScore;
     }
     else
     {
-        std::cout<<"failed to load : .save" << std::endl;
+        std::cout << "failed to load : .save" << std::endl;
     }
     file.close();
-    if(!font.loadFromMemory(Air_Americana_ttf,Air_Americana_ttf_size))
+    if (!font.loadFromMemory(Air_Americana_ttf, Air_Americana_ttf_size))
     {
-        std::cout<<"failed to load : font" << std::endl;
+        std::cout << "failed to load : font" << std::endl;
     }
     else
     {
-        std::cout<<"success to load : font" << std::endl;
+        std::cout << "success to load : font" << std::endl;
         displayScore.setFont(font);
-        displayScore.move(0,30);
+        displayScore.move(0, 30);
         displayBestScore.setFont(font);
         UpdateBestScore();
     }
 
     spriteHome.setTexture(ResourceManager<sf::Texture>::GetResource("Assets/accueil.png"));
+    spritePause.setTexture(ResourceManager<sf::Texture>::GetResource("Assets/pause.png"));
 }
 
-void GameManager::StartGame(){
+void GameManager::StartGame()
+{
     inGame = true;
     score = 0;
     UpdateScore();
@@ -52,17 +54,19 @@ void GameManager::StartGame(){
     // gameSpace.AddElement(std::make_unique<Asteroids>(gameSpace, *this));
     // gameSpace.AddElement(std::make_unique<Asteroids>(gameSpace, *this));
 
-    std::cout<<"Started"<<std::endl;
-
+    std::cout << "Started" << std::endl;
 }
 
-void GameManager::EndGame(){
+void GameManager::EndGame()
+{
     inGame = false;
-    if(score > bestScore){
+    if (score > bestScore)
+    {
         bestScore = score;
         UpdateBestScore();
         auto file = std::ofstream{".save"};
-        if(file.is_open()){
+        if (file.is_open())
+        {
             file << score;
         }
         file.close();
@@ -70,8 +74,10 @@ void GameManager::EndGame(){
     gameSpace.Clear();
 }
 
-void GameManager::DrawHome(sf::RenderWindow& wind) const{
-    if(!IsInGame() && gameSpace.IsEmpty()){
+void GameManager::DrawHome(sf::RenderWindow &wind) const
+{
+    if (!IsInGame() && gameSpace.IsEmpty())
+    {
         wind.draw(spriteHome);
     }
     else
@@ -81,7 +87,17 @@ void GameManager::DrawHome(sf::RenderWindow& wind) const{
     wind.draw(displayBestScore);
 }
 
-void GameManager::AddScore(int s){
+void GameManager::DrawPause(sf::RenderWindow &wind) const 
+{
+if (paused)
+{
+   wind.draw(spritePause);
+}
+
+}
+
+void GameManager::AddScore(int s)
+{
     score += s;
     UpdateScore();
 }
@@ -100,9 +116,9 @@ void GameManager::CheckForAsteroids()
 {
     if (NB_ASTEROIDS > gameSpace.GetNbAsteroids() && inGame)
     {
-        for (auto i{0}; i < NB_ASTEROIDS ; i++)
+        for (auto i{0}; i < NB_ASTEROIDS; i++)
         {
-             gameSpace.AddElement(std::make_unique<Asteroids>(gameSpace, *this));
+            gameSpace.AddElement(std::make_unique<Asteroids>(gameSpace, *this));
         }
     }
 }

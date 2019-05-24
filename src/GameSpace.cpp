@@ -8,52 +8,63 @@ GameSpace::GameSpace()
 
     //ctor
 }
-void GameSpace::AddElement(std::unique_ptr<MovingItem> item){
+void GameSpace::AddElement(std::unique_ptr<MovingItem> item)
+{
     toAdd.push_back(std::move(item));
 }
 
-void GameSpace::Update(){
+void GameSpace::Update(bool paused)
+{
     auto lastFrame = clock.restart().asSeconds();
-    for(auto i{0}; i<elements.size(); ++i){
-        elements[i]->Update(lastFrame);
+    if (!paused)
+    {
+        for (auto i{0}; i < elements.size(); ++i)
+        {
+            elements[i]->Update(lastFrame);
+        }
     }
-
 }
-void GameSpace::Collision(){
-    for(auto i{0}; i<elements.size(); ++i){
-        for(auto j{0}; j<elements.size(); ++j){
-            if(i != j)
+void GameSpace::Collision()
+{
+    for (auto i{0}; i < elements.size(); ++i)
+    {
+        for (auto j{0}; j < elements.size(); ++j)
+        {
+            if (i != j)
             {
                 elements[i]->Collision(*elements[j]);
             }
         }
     }
 }
-void GameSpace::Draw(sf::RenderWindow& wind) const{
+void GameSpace::Draw(sf::RenderWindow &wind) const
+{
     wind.draw(spriteBg);
-    for(auto& element : elements){
+    for (auto &element : elements)
+    {
         element->Draw(wind);
     }
 }
 
-void GameSpace::Clean(){
-    auto newEnd = std::remove_if(std::begin(elements),std::end(elements),MovingItem::IsDestroy);
+void GameSpace::Clean()
+{
+    auto newEnd = std::remove_if(std::begin(elements), std::end(elements), MovingItem::IsDestroy);
     elements.erase(newEnd, std::end(elements));
 
-    for(auto& elem : toAdd){
+    for (auto &elem : toAdd)
+    {
         elements.push_back(std::move(elem));
     }
     toAdd.clear();
-    if (toClear){
+    if (toClear)
+    {
         toClear = false;
         elements.clear();
     }
-
 }
 
-void GameSpace::Clear(){
+void GameSpace::Clear()
+{
     toClear = true;
     toAdd.clear();
 }
-
-

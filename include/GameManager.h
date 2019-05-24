@@ -6,36 +6,39 @@
 
 class GameManager
 {
-    public:
-        /** Default constructor */
-        GameManager(GameSpace& gs);
-        void StartGame();
-        void EndGame();
-        void AddScore(int s);
-        inline bool IsInGame() const {return inGame;};
-        void DrawHome(sf::RenderWindow& wind) const;
-        void CheckForAsteroids();
-        inline float GetRand(float M,float N)
-        {
-            return float(M + (rand() / ( RAND_MAX / (N-M) ) )) ;  
-        }
-    protected:
-        void UpdateScore();
-        void UpdateBestScore();
+public:
+    /** Default constructor */
+    GameManager(GameSpace &gs);
+    void StartGame();
+    void EndGame();
+    void AddScore(int s);
+    inline bool IsInGame() const { return inGame; };
+    void DrawHome(sf::RenderWindow &wind) const;
+    void DrawPause(sf::RenderWindow &wind) const;
+    void CheckForAsteroids();
+    inline float GetRand(float M, float N) { return float(M + (rand() / (RAND_MAX / (N - M)))); }
+    inline bool isPaused() { return paused; };
+    inline void ChangePauseState(bool b) { paused = b; };
 
-        GameSpace& gameSpace;
-        sf::Font font{};
-        sf::Sprite spriteHome{};
-        sf::Text displayScore{};
-        sf::Text displayBestScore{};
+protected:
+    void UpdateScore();
+    void UpdateBestScore();
 
-        bool inGame{false};
-        int score{0};
-        int bestScore{0};
+    GameSpace &gameSpace;
+    sf::Font font{};
+    sf::Sprite spriteHome{};
+    sf::Sprite spritePause{};
+    sf::Text displayScore{};
+    sf::Text displayBestScore{};
 
-        static constexpr int NB_ASTEROIDS{4};
+    bool paused{false};
+    bool inGame{false};
+    int score{0};
+    int bestScore{0};
 
-    private:
+    static constexpr int NB_ASTEROIDS{4};
+
+private:
 };
 
 #endif // GAMEMANAGER_H

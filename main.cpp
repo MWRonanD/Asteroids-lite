@@ -31,14 +31,31 @@ int main()
                 std::cout << "Let's play !" << std::endl;
                 gm.StartGame();
             }
+            if (!gm.isPaused() && gm.IsInGame() && sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+            {
+                std::cout << "paused !" << std::endl;
+                gm.ChangePauseState(true);
+            }
+            if (gm.isPaused() && sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+            {
+                std::cout << "Let's play again !" << std::endl;
+                gm.ChangePauseState(false);
+            }
+            if (gm.isPaused() && sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
+            {
+                std::cout << "Game end !" << std::endl;
+                gm.ChangePauseState(false);
+                gm.EndGame();
+            }
         }
         gm.CheckForAsteroids();
-        gameSpace.Update();
-        gameSpace.Collision();
-
+            gameSpace.Update(gm.isPaused());
+            gameSpace.Collision();
+        
         wind.clear();
         gameSpace.Draw(wind);
         gm.DrawHome(wind);
+        gm.DrawPause(wind);
         wind.display();
 
         gameSpace.Clean();

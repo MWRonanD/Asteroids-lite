@@ -11,7 +11,7 @@ class GameSpace
         /** Default constructor */
         GameSpace();
         void AddElement(std::unique_ptr<MovingItem> item);
-        void Update();
+        void Update(bool paused);
         void Collision();
         void Draw(sf::RenderWindow& wind) const;
         void Clean();
