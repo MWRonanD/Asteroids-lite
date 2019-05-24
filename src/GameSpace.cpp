@@ -1,8 +1,11 @@
 #include "GameSpace.h"
 #include "MovingItem.h"
 #include <memory>
+#include "ResourceManager.h"
 GameSpace::GameSpace()
 {
+    spriteBg.setTexture(ResourceManager<sf::Texture>::GetResource("Assets/background.png"));
+
     //ctor
 }
 void GameSpace::AddElement(std::unique_ptr<MovingItem> item){
@@ -27,6 +30,7 @@ void GameSpace::Collision(){
     }
 }
 void GameSpace::Draw(sf::RenderWindow& wind) const{
+    wind.draw(spriteBg);
     for(auto& element : elements){
         element->Draw(wind);
     }

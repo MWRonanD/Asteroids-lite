@@ -42,6 +42,7 @@ class GameSpace
         std::vector<std::unique_ptr<MovingItem>> elements{};
         std::vector<std::unique_ptr<MovingItem>> toAdd{};
         sf::Clock clock{};
+        sf::Sprite spriteBg;
 
 
     private:
